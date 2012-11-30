@@ -1,6 +1,4 @@
-
-- var href = "<?php global $HREF; echo $HREF; ?>"
-- var fallback = "<?php global $FALLBACK; echo $FALLBACK; ?>"
+- var fallback = "plz enable scripting"
 
 doctype 5
 //if lt IE 9
@@ -15,11 +13,11 @@ html.no-js( lang="en" )
 		title index · styled with {{pkg.name}} {{pkg.version}} ({{pkg.url}})
 		meta( name="description", content="index styled with {{pkg.name}} {{pkg.version}} ({{pkg.url}})" )
 		meta( name="viewport", content="width=device-width" )
-		link( rel="shortcut icon", href!="#{href}client/images/app-16x16.ico" )
-		link( rel="apple-touch-icon", type="image/png", href!="#{href}client/images/app-48x48.png" )
+		link( rel="shortcut icon", href="_img/app-16x16.ico" )
+		link( rel="apple-touch-icon", type="image/png", href="_img/app-48x48.png" )
 		link( rel="stylesheet", href="//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic|Ubuntu:400,700,400italic,700italic" )
-		link( rel="stylesheet", href!="#{href}client/css/styles.css" )
-		script( src!="#{href}client/js/scripts.js" )
+		link( rel="stylesheet", href="_css/styles.css" )
+		script( src!="_js/scripts.js" )
 
 	body
 
@@ -33,7 +31,7 @@ html.no-js( lang="en" )
 				span.hideOnJs.noJsMsg
 					| ⚡ JavaScript is disabled! ⚡
 				span.oldBrowser
-					| ⚡ Some features disabled! Works best in 
+					| ⚡ Some features disabled! Works best in
 					a( href="http://browsehappy.com" ) modern browsers
 					| . ⚡
 			span.right

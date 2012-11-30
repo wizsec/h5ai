@@ -38,12 +38,7 @@ var path = require('path'),
 
 	mapSrc = function (blob) {
 
-		return blob.source.replace(src, build).replace(/\.less$/, '.css').replace(/\.jade$/, '');
-	},
-
-	mapRoot = function (blob) {
-
-		return blob.source.replace(root, path.join(build, '_h5ai'));
+		return blob.source.replace(src, build).replace(/\.less$/, '.css');
 	};
 
 
@@ -91,21 +86,21 @@ module.exports = function (make) {
 
 	make.target('lint', [], 'lint all JavaScript files with JSHint').sync(function () {
 
-		$(src + '/_h5ai/client/js: **/*.js, ! lib/**')
+		$(src + '/_js: **/*.js, ! lib/**')
 			.jshint(jshint);
 	});
 
 
 	make.target('build', ['check-version'], 'build all updated files').sync(function () {
 
-		$(src + ': _h5ai/client/js/*.js')
-			.modified(mapSrc, $(src + ': _h5ai/client/js/**'))
+		$(src + ': _js/*.js')
+			.modified(mapSrc, $(src + ': _js/**'))
 			.includify()
 			.uglifyjs()
 			.write($.OVERWRITE, mapSrc);
 
-		$(src + ': _h5ai/client/css/*.less')
-			.modified(mapSrc, $(src + ': _h5ai/client/css/**'))
+		$(src + ': _css/*.less')
+			.modified(mapSrc, $(src + ': _css/**'))
 			.less()
 			.cssmin()
 			.write($.OVERWRITE, mapSrc);
@@ -113,30 +108,26 @@ module.exports = function (make) {
 		$(src + ': **/*.jade')
 			.modified(mapSrc)
 			.handlebars(handlebarsEnv)
-			.jade()
+			//.jade()
 			.write($.OVERWRITE, mapSrc);
 
-		$(src + ': **, ! _h5ai/client/js/**, ! _h5ai/client/css/**, ! **/*.jade')
+		$(src + ': **, ! _js/**, ! _css/**, ! **/*.jade')
 			.modified(mapSrc)
 			.handlebars(handlebarsEnv)
 			.write($.OVERWRITE, mapSrc);
-
-		$(root + ': README*, LICENSE*')
-			.modified(mapRoot)
-			.write($.OVERWRITE, mapRoot);
 	});
 
 
 	make.target('build-uncompressed', ['check-version'], 'build all updated files without compression').sync(function () {
 
-		$(src + ': _h5ai/client/js/*.js')
-			.modified(mapSrc, $(src + ': _h5ai/client/js/**'))
+		$(src + ': _js/*.js')
+			.modified(mapSrc, $(src + ': _js/**'))
 			.includify()
 			// .uglifyjs()
 			.write($.OVERWRITE, mapSrc);
 
-		$(src + ': _h5ai/client/css/*.less')
-			.modified(mapSrc, $(src + ': _h5ai/client/css/**'))
+		$(src + ': _css/*.less')
+			.modified(mapSrc, $(src + ': _css/**'))
 			.less()
 			// .cssmin()
 			.write($.OVERWRITE, mapSrc);
@@ -144,17 +135,13 @@ module.exports = function (make) {
 		$(src + ': **/*.jade')
 			.modified(mapSrc)
 			.handlebars(handlebarsEnv)
-			.jade()
+			//.jade()
 			.write($.OVERWRITE, mapSrc);
 
-		$(src + ': **, ! _h5ai/client/js/**, ! _h5ai/client/css/**, ! **/*.jade')
+		$(src + ': **, ! _js/**, ! _css/**, ! **/*.jade')
 			.modified(mapSrc)
 			.handlebars(handlebarsEnv)
 			.write($.OVERWRITE, mapSrc);
-
-		$(root + ': README*, LICENSE*')
-			.modified(mapRoot)
-			.write($.OVERWRITE, mapRoot);
 	});
 
 

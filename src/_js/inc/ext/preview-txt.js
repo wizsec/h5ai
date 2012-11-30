@@ -106,11 +106,11 @@ modulejs.define('ext/preview-txt', ['_', '$', 'core/settings', 'core/resource', 
 		},
 		loadSyntaxhighlighter = function (callback) {
 
-			loadScript(allsettings.h5aiAbsHref + 'client/js/syntaxhighlighter.js', 'SyntaxHighlighter', callback);
+			loadScript(allsettings.h5aiAbsHref + '_js/syntaxhighlighter.js', 'SyntaxHighlighter', callback);
 		},
 		loadMarkdown = function (callback) {
 
-			loadScript(allsettings.h5aiAbsHref + 'client/js/markdown.js', 'markdown', callback);
+			loadScript(allsettings.h5aiAbsHref + '_js/markdown.js', 'markdown', callback);
 		},
 
 		adjustSize = function () {

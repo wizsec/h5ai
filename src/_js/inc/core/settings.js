@@ -1,7 +1,7 @@
 
 modulejs.define('core/settings', ['config', '_', '$'], function (config, _, $) {
 
-	var filename = 'client/js/scripts.js',
+	var filename = '_js/scripts.js',
 		src = $('script[src$="' + filename + '"]').attr('src'),
 		appHref = src.substr(0, src.length - filename.length),
 
