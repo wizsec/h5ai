@@ -186,8 +186,10 @@ modulejs.define('ext/tree', ['_', '$', 'core/settings', 'core/resource', 'core/e
 
 		adjustSpacing = function () {
 
+			return;
+
 			var $tree = $('#tree'),
-				winHeight = $(window).height(),
+				winHeight = $('pengiBody1').height(),
 				navHeight = $('#topbar').outerHeight(),
 				footerHeight = $('#bottombar').outerHeight();
 
@@ -218,7 +220,7 @@ modulejs.define('ext/tree', ['_', '$', 'core/settings', 'core/resource', 'core/e
 			}
 
 			var $tree = $('<div id="tree"/>')
-				.appendTo('body')
+				.appendTo('#pengiBody1')
 				.scrollpanel()
 				.on('click', '.indicator', createOnIndicatorClick())
 				.on('mouseenter', function () {

@@ -18,7 +18,7 @@ modulejs.define('core/notify', ['$'], function ($) {
 
 		init = function () {
 
-			$(template).hide().appendTo('body');
+			$(template).hide().appendTo('#pengiBody1');
 		};
 
 	init();

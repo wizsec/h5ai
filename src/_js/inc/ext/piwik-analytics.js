@@ -17,7 +17,7 @@ modulejs.define('ext/piwik-analytics', ['_', '$', 'core/settings'], function (_,
 
 			var pkBaseURL = (("https:" === document.location.protocol) ? "https://" : "http://") + settings.baseURL + '/';
 
-			$('<script/>').attr('src', pkBaseURL + 'piwik.js').appendTo('body');
+			$('<script/>').attr('src', pkBaseURL + 'piwik.js').appendTo('#pengiBody1');
 			$(window).load(function () {
 				/*global Piwik */
 

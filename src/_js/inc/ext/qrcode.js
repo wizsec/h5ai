@@ -62,7 +62,7 @@ modulejs.define('ext/qrcode', ['_', '$', 'modernizr', 'core/settings', 'core/eve
 				return;
 			}
 
-			$qrcode = $(template).appendTo('body');
+			$qrcode = $(template).appendTo('#pengiBody1');
 
 			event.sub('item.mouseenter', onMouseenter);
 			event.sub('item.mouseleave', onMouseleave);

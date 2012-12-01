@@ -286,7 +286,7 @@ modulejs.define('ext/preview-txt', ['_', '$', 'core/settings', 'core/resource', 
 				return;
 			}
 
-			$(template).appendTo('body');
+			$(template).appendTo('#pengiBody1');
 			$('#pv-txt-bar-prev').on('click', onPrevious);
 			$('#pv-txt-bar-next').on('click', onNext);
 			$('#pv-txt-bar-close, #pv-txt-close').on('click', onExit);

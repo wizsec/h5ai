@@ -139,7 +139,7 @@ modulejs.define('ext/select', ['_', '$', 'core/settings', 'core/event'], functio
 				return;
 			}
 
-			$selectionRect.hide().appendTo('body');
+			$selectionRect.hide().appendTo('#pengiBody1');
 
 			event.sub('location.changed', onLocationChanged);
 			event.sub('location.refreshed', onLocationRefreshed);

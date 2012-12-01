@@ -95,7 +95,7 @@ modulejs.define('ext/preview-img', ['_', '$', 'core/settings', 'core/resource', 
 								width: 0,
 								height: 0
 							})
-							.appendTo('body'),
+							.appendTo('#pengiBody1'),
 				$img = $hidden.find('img')
 							.one('load', function () {
 
@@ -235,7 +235,7 @@ modulejs.define('ext/preview-img', ['_', '$', 'core/settings', 'core/resource', 
 				return;
 			}
 
-			$(template).appendTo('body');
+			$(template).appendTo('#pengiBody1');
 			$('#pv-img-bar-prev, #pv-img-prev').on('click', onPrevious);
 			$('#pv-img-bar-next, #pv-img-next').on('click', onNext);
 			$('#pv-img-bar-close, #pv-img-close').on('click', onExit);
