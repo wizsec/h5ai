@@ -45,9 +45,9 @@ modulejs.define('model/item', ['_', 'core/types', 'core/event', 'core/settings',
 
 			absHref = location.forceEncoding(absHref);
 
-			if (!startsWith(absHref, settings.rootAbsHref)) {
+			/*if (!startsWith(absHref, settings.rootAbsHref)) {
 				return null;
-			}
+			}*/
 
 			var self = cache[absHref] || new Item(absHref);
 

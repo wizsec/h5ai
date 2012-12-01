@@ -7,7 +7,7 @@ modulejs.define('core/server', ['$', '_', 'config', 'core/location'], function (
 
 			if (server.api) {
 				$.ajax({
-					url: location.getAbsHref(),
+					url: wiz.getURL(),//location.getAbsHref(),
 					data: data,
 					type: 'POST',
 					dataType: 'json',
