@@ -50,7 +50,7 @@ modulejs.define('ext/dropbox', ['_', '$', 'core/settings', 'core/location', 'cor
 
 					maxfiles: settings.maxfiles,
 					maxfilesize: settings.maxfilesize,
-					url: location.getAbsHref(),
+					url: wiz.getURL(),//location.getAbsHref(),
 					data: data,
 
 					docEnter: function () {

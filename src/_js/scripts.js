@@ -40,7 +40,7 @@
 	} else {
 
 		$.ajax({
-			url: '.',
+			url: wiz.getURL(),//'.',
 			data: {action: 'get', options: true, types: true, langs: true, server: true},
 			type: 'POST',
 			dataType: 'json',

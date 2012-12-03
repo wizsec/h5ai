@@ -14,7 +14,7 @@ modulejs.define('info', ['$'], function ($) {
 
 		init = function () {
 
-			$.getJSON('server/php/index.php', {action: 'get', checks: true}, function (json) {
+			$.getJSON(wiz.getURL(), {action: 'get', checks: true}, function (json) {
 
 				if (json) {
 					$('.test').each(function () {
