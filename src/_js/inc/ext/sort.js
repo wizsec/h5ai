@@ -44,7 +44,7 @@ modulejs.define('ext/sort', ['_', '$', 'core/settings', 'core/resource', 'core/e
 
 		getName = function (item) {
 
-			return $(item).find('.label').text().toLowerCase();
+			return $(item).find('.h5ai-label').text().toLowerCase();
 		},
 		getTime = function (item) {
 
@@ -89,11 +89,11 @@ modulejs.define('ext/sort', ['_', '$', 'core/settings', 'core/resource', 'core/e
 			var $ascending = $('<img src="' + resource.image('ascending') + '" class="sort ascending" alt="ascending" />'),
 				$descending = $('<img src="' + resource.image('descending') + '" class="sort descending" alt="descending" />'),
 				$header = $('#items li.header'),
-				$label = $header.find('a.label'),
+				$label = $header.find('a.h5ai-label'),
 				$date = $header.find('a.date'),
 				$size = $header.find('a.size');
 
-			$all = $header.find('a.label,a.date,a.size');
+			$all = $header.find('a.h5ai-label,a.date,a.size');
 			orders = {
 				na: {
 					head: $label,

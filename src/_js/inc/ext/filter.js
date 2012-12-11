@@ -24,7 +24,7 @@ modulejs.define('ext/filter', ['_', '$', 'core/settings', 'core/resource'], func
 			if (re) {
 				$('#items .item').each(function () {
 
-					var label = $(this).find('.label').text();
+					var label = $(this).find('.h5ai-label').text();
 
 					if (label.match(re)) {
 						match.push(this);

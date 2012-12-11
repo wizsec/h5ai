@@ -10,7 +10,7 @@ modulejs.define('view/items', ['_', '$', 'core/settings', 'core/resource', 'core
 						'<a>' +
 							'<span class="icon small"><img/></span>' +
 							'<span class="icon big"><img/></span>' +
-							'<span class="label"/>' +
+							'<span class="h5ai-label"/>' +
 							'<span class="date"/>' +
 							'<span class="size"/>' +
 						'</a>' +
@@ -21,7 +21,7 @@ modulejs.define('view/items', ['_', '$', 'core/settings', 'core/resource', 'core
 								'<ul id="items" class="clearfix">' +
 									'<li class="header">' +
 										'<a class="icon"/>' +
-										'<a class="label" href="#"><span class="l10n-name"/></a>' +
+										'<a class="h5ai-label" href="#"><span class="l10n-name"/></a>' +
 										'<a class="date" href="#"><span class="l10n-lastModified"/></a>' +
 										'<a class="size" href="#"><span class="l10n-size"/></a>' +
 									'</li>' +
@@ -40,7 +40,7 @@ modulejs.define('view/items', ['_', '$', 'core/settings', 'core/resource', 'core
 				$a = $html.find('a'),
 				$imgSmall = $html.find('.icon.small img'),
 				$imgBig = $html.find('.icon.big img'),
-				$label = $html.find('.label'),
+				$label = $html.find('.h5ai-label'),
 				$date = $html.find('.date'),
 				$size = $html.find('.size');
 

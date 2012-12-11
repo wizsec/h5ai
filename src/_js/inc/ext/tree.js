@@ -13,7 +13,7 @@ modulejs.define('ext/tree', ['_', '$', 'core/settings', 'core/resource', 'core/e
 						'</span>' +
 						'<a>' +
 							'<span class="icon"><img/></span>' +
-							'<span class="label"/>' +
+							'<span class="h5ai-label"/>' +
 						'</a>' +
 					'</span>',
 		statusHintTemplate = '<span class="hint"/>',
@@ -26,7 +26,7 @@ modulejs.define('ext/tree', ['_', '$', 'core/settings', 'core/resource', 'core/e
 				$indicator = $html.find('.indicator'),
 				$a = $html.find('a'),
 				$img = $html.find('.icon img'),
-				$label = $html.find('.label');
+				$label = $html.find('.h5ai-label');
 
 			$html
 				.addClass(item.isFolder() ? 'folder' : 'file')
