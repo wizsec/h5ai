@@ -42,7 +42,7 @@ Options
 		"indexFiles": ["index.html", "index.htm", "index.php"],
 		"ignore": ["^\\.", "^_{{pkg.name}}"],
 		"smartBrowsing": true,
-		"extInNewWindow": true
+		"extInNewWindow": false
 	},
 
 

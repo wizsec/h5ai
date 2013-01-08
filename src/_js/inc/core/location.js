@@ -36,7 +36,7 @@ modulejs.define('core/location', ['_', 'modernizr', 'core/settings', 'core/event
 				a = doc.createElement('a');
 
 			a.href = testpathname;
-			return uriToPathname(a.href) === testpathname;
+			return a.pathname === testpathname;
 		}()),
 
 		encodedHref = function (href) {
@@ -45,7 +45,7 @@ modulejs.define('core/location', ['_', 'modernizr', 'core/settings', 'core/event
 				location;
 
 			a.href = href;
-			location = uriToPathname(a.href);
+			location = a.pathname;
 
 			if (hrefsAreDecoded) {
 				location = encodeURIComponent(location).replace(/%2F/ig, '/');
@@ -106,10 +106,12 @@ modulejs.define('core/location', ['_', 'modernizr', 'core/settings', 'core/event
 
 			event.pub('location.beforeChange');
 
+			//console.log('url is '+newAbsHref);
 			newAbsHref = encodedHref(newAbsHref);
 
 			if (absHref !== newAbsHref) {
-				absHref = newAbsHref;
+				absHref = wiz.getPath() + '#!' + newAbsHref;
+				//console.log('url is '+absHref);
 
 				if (history) {
 					if (keepBrowserUrl) {
@@ -180,7 +182,6 @@ modulejs.define('core/location', ['_', 'modernizr', 'core/settings', 'core/event
 
 
 	event.sub('ready', function () {
-
 		setLocation(document.location.href, true);
 	});
 
