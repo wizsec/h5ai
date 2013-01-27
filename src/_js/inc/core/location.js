@@ -111,6 +111,7 @@ modulejs.define('core/location', ['_', 'modernizr', 'core/settings', 'core/event
 			//console.log('url after encoding: '+newAbsHref);
 
 			if (absHref !== newAbsHref) {
+				absHref = newAbsHref;
 				if (history) {
 					if (keepBrowserUrl) {
 						history.replaceState({absHref: absHref}, '', absHref);
