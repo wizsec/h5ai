@@ -106,13 +106,11 @@ modulejs.define('core/location', ['_', 'modernizr', 'core/settings', 'core/event
 
 			event.pub('location.beforeChange');
 
-			//console.log('url is '+newAbsHref);
+			//console.log('url before encoding: '+newAbsHref);
 			newAbsHref = encodedHref(newAbsHref);
+			//console.log('url after encoding: '+newAbsHref);
 
 			if (absHref !== newAbsHref) {
-				absHref = wiz.getPath() + '#!' + newAbsHref;
-				//console.log('url is '+absHref);
-
 				if (history) {
 					if (keepBrowserUrl) {
 						history.replaceState({absHref: absHref}, '', absHref);
