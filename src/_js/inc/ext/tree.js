@@ -176,7 +176,7 @@ modulejs.define('ext/tree', ['_', '$', 'core/settings', 'core/resource', 'core/e
 			item.isContentVisible = true;
 			item.fetchContent(function (item) {
 
-				if (item.parent) {
+				if (false && item.parent) {
 					fetchTree(item.parent, callback);
 				} else {
 					callback(item);
